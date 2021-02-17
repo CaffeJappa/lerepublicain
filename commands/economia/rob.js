@@ -16,7 +16,7 @@ const Data = require("../../modelos/data.js");
 module.exports.run = async (bot, message, args) => {
   // Verificar menção
   let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-  let maxLimit = 101;
+  let maxLimit = 5001;
   if(!message.mentions.users.first()) return message.reply("Não encontrei ninguém.");
   if(message.mentions.users.first() === message.author) return message.channel.send("Não é possível roubar a sí.");
 
@@ -41,14 +41,17 @@ module.exports.run = async (bot, message, args) => {
         if(userData.dinheiro < 101) return message.channel.send("O usuário não pode ser roubado.");
 
         if(!authorData) {
+          let valor = 20000 + reward;
           const newData = new Data({
             nome: bot.users.cache.get(message.author.id).username,
             userID: message.author.id,
             lb: "all",
-            dinheiro: reward,
+            dinheiro: valor,
             banco: 0,
             data: 0,
+            ipData: 0,
             robData: Date.now(),
+            salData: 0,
           })
           userData.dinheiro -= reward;
           userData.save().catch(err => console.log(err));

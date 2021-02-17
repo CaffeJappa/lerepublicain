@@ -32,14 +32,17 @@ module.exports.run = async (bot, message, args) => {
   }, (err, data) => {
     if(err) console.log(err);
     if(!data) {
+      let valor = 20000 + reward;
       const newData = new Data({
         nome: message.author.username,
         userID: message.author.id,
         lb: "all",
-        dinheiro: reward,
+        dinheiro: valor,
         banco: 0,
         data: Date.now(),
+        ipData: 0,
         robData: 0,
+        salData: 0,
       })
       newData.save().catch(err => console.log(err));
       embed.setDescription(`Trabalhaste por um tempo e ganhaste R$${reward}. Tens agora R$${newData.dinheiro}.`);

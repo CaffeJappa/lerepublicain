@@ -29,20 +29,22 @@ module.exports.run = async (bot, message, args) => {
         nome: bot.users.cache.get(user.id).username,
         userID: user.id,
         lb: "all",
-        dinheiro: 0,
+        dinheiro: 20000,
         banco: 0,
         data: 0,
+        ipData: 0,
         robData: 0,
+        salData: 0,
       })
       newData.save().catch(err => console.log(err));
       let embed = new Discord.MessageEmbed()
       .setAuthor(`${bot.users.cache.get(user.id).tag}`, message.author.displayAvatarURL())
       .setImage()
       .setColor("#FFD700")
-      .addField("Dinheiro:", `R$0`, true)
+      .addField("Dinheiro:", `R$20.000`, true)
       .addField("Banco:", `R$0`, true)
       .setTimestamp()
-      .setFooter('O Monarquista ©', bot.user.displayAvatarURL());
+      .setFooter('Le Républicain ©', bot.user.displayAvatarURL());
       //return message.channel.send(`${bot.users.cache.get(user.id).username}, tu tens R$${dinheiro[user.id].dinheiro}`);
       return message.channel.send(embed);
     } else {
@@ -50,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
       .setAuthor(`${bot.users.cache.get(user.id).tag}`, message.author.displayAvatarURL())
       .setImage()
       .setColor("#FFD700")
-      .addField("Dinheiro:", `R$${data.dinheiro}`, true)
+      .addField("Dinheiro:", `R$${data.dinheiro.toLocaleString()}`, true)
       .addField("Banco:", `R$${data.banco.toLocaleString()}`, true)
       .setTimestamp()
       .setFooter('O Monarquista ©', bot.user.displayAvatarURL());

@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
         data.dinheiro -= tudo;
         data.save().catch(err => console.log(err));
       }
-      return message.channel.send(`${message.author} depositou R$${tudo}.`);
+      return message.channel.send(`${message.author} depositou R$${tudo.toLocaleString()}.`);
     })
 
 }

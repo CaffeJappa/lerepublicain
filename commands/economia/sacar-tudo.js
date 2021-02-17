@@ -21,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
       if(parseInt(args[0]) > data.dinheiro) return message.channel.send("Estás sem dinheiro.");
       if(parseInt(args[0]) < 1) return message.channel.send("Não podes sacar.");
 
+      if(data.dinheiro <= 0) return message.channel.send("Estás sem dinheiro.")
       if(!data) {
         return message.channel.send("Estás sem dinheiro.")
       } else {
@@ -28,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
         data.banco -= tudo;
         data.save().catch(err => console.log(err));
       }
-      return message.channel.send(`${message.author} depositou R$${tudo}.`);
+      return message.channel.send(`${message.author} sacou R$${tudo.toLocaleString()}.`);
     })
 
 }

@@ -7,7 +7,9 @@ const dataMSchema = mongoose.Schema({
   dinheiro: Number,
   banco: Number,
   data: Number,
+  ipData: Number,
   robData: Number,
+  salData: Number,
 })
 
 module.exports = mongoose.model("DataM", dataMSchema);

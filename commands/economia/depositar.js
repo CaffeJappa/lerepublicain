@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
         data.banco += parseInt(args[0]);
         data.save().catch(err => console.log(err));
       }
-      return message.channel.send(`${message.author} depositou R$${args[0]}.`);
+      return message.channel.send(`${message.author} depositou R$${args[0].toLocaleString()}.`);
     })
 
 }

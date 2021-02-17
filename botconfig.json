@@ -1,5 +1,5 @@
 {
   "token": "NzAxNjEwMDIwOTc4MDMyNjcx.Xpz_QA.bKBPW-91OhtPJW3M0Fj9fagg5jQ",
-  "prefix": "lr!",
-  "mongoPass": "mongodb://JoanBictor:10062006Gf.@cluster0-shard-00-00.tlfhs.mongodb.net:27017,cluster0-shard-00-01.tlfhs.mongodb.net:27017,cluster0-shard-00-02.tlfhs.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-nvz4l1-shard-0&authSource=admin&retryWrites=true&w=majority"
+  "prefix": "%",
+  "mongoPass": "mongodb://JeanVicteur:10062006Gf.@cluster0-shard-00-00.xss8a.mongodb.net:27017,cluster0-shard-00-01.xss8a.mongodb.net:27017,cluster0-shard-00-02.xss8a.mongodb.net:27017/federacao?ssl=true&replicaSet=atlas-12bta0-shard-0&authSource=admin&retryWrites=true&w=majority"
 }

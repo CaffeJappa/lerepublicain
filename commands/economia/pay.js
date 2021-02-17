@@ -37,14 +37,17 @@ module.exports.run = async (bot, message, args) => {
         if(parseInt(args[2]) < 1) return message.channel.send("Não é possível pagar.");
 
         if(!userData) {
+          let valor = parseInt(args[2]) + 20000;
           const newData = new Data({
             nome: bot.users.cache.get(user.id).username,
             userID: user.id,
             lb: "all",
-            dinheiro: parseInt(args[2]),
+            dinheiro: valor,
             banco: 0,
             data: 0,
+            ipData: 0,
             robData: 0,
+            salData: 0,
           })
           authorData.dinheiro -= parseInt(args[2]);
           newData.save().catch(err => console.log(err));

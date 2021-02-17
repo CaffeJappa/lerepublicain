@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const ms = require("parse-ms");
 const mongoose = require("mongoose");
 const botconfig = require("../../botconfig.json");
 
@@ -27,14 +28,17 @@ module.exports.run = async (bot, message, args) => {
       if(err) console.log(err);
 
       if(!userData) {
+        let valor = parseInt(args[1]) + 20000;
         const newData = new Data({
           nome: bot.users.cache.get(user.id).username,
           userID: user.id,
           lb: "all",
-          dinheiro: parseInt(args[1]),
+          dinheiro: valor,
           banco: 0,
           data: 0,
+          ipData: 0,
           robData: 0,
+          salData: 0,
         })
         newData.save().catch(err => console.log(err));
       } else {

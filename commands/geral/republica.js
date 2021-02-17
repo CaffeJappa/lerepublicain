@@ -1,5 +1,10 @@
 module.exports.run = async (bot, message, args) => {
-  message.channel.send(`Nunca falei mal!\n\n **:door: - Convite do Servidor**: https://discord.gg/qzbEBtfQFy`);
+  const invite = await message.channel.createInvite({
+    reason: "Comando Executado - Invite"
+  });
+
+  let codigo = `https://discord.gg/${invite.code}`
+  message.channel.send(`**:door: - Convite do Servidor**: ${codigo}`);
 }
 
 module.exports.help = {
