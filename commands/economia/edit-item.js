@@ -12,8 +12,6 @@ mongoose.connect(botconfig.mongoPass, {
 const Data = require("../../modelos/ações.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("Não tens permissões para fazer isto.");
-  
     if(!args[0]) return message.channel.send("Por favor, específique um item pelo seu ID.");
     if(!args[1]) return message.channel.send("Por favor, específique um novo valor.");
     if(parseInt(args[1]) < 1) return message.channel.send("Não é possível alterar.");

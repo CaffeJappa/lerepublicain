@@ -36,12 +36,12 @@ module.exports.run = async (bot, message, args) => {
     } else if(res.length <= fim) {
       embed.setFooter(`Página ${pg}/${pagina} •  Le Républicain ©`);
       for(i = inicio; i < res.length; i++) {
-        embed.addField(`${i + 1}. ${res[i].nome} (ID: ${res[i].itemID})`, `${res[i].desc}`);
+        embed.addField(`${i + 1}. ${res[i].nome} (ID: ${res[i].itemID})`, `QTD: ${res[i].qtd}\n${res[i].desc}`);
       }
     } else {
       embed.setFooter(`Página ${pg}/${pagina} •  Le Républicain ©`);
       for(i = inicio; i < fim; i++) {
-        embed.addField(`${i + 1}. ${res[i].nome} (ID: ${res[i].itemID})`, `${res[i].desc}`  );
+        embed.addField(`${i + 1}. ${res[i].nome} (ID: ${res[i].itemID})`, `QTD: ${res[i].qtd}\n${res[i].desc}`  );
       }
     }
     message.channel.send(embed);

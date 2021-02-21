@@ -6,6 +6,7 @@ const invSchema = mongoose.Schema({
   nome: String,
   desc: String,
   tipo: String,
+  qtd: Number,
 })
 
 module.exports = mongoose.model("inv", invSchema);
