@@ -54,6 +54,10 @@ module.exports.run = async (bot, message, args) => {
                 data.dinheiro += 32000
                 embed.addField(`R$32.000`, `Salário de Deputado Federal`)
             }
+            if(message.member.roles.cache.find(r => r.name === "Senador Federal")) {
+                data.dinheiro += 35000
+                embed.addField(`R$35.000`, `Salário de Senador Federal`)
+            }
             if(message.member.roles.cache.find(r => r.name === "Ministro de Estado")) {
                 data.dinheiro += 28000
                 embed.addField(`R$28.000`, `Salário de Ministro Executivo`)
