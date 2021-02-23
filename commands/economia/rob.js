@@ -20,6 +20,11 @@ module.exports.run = async (bot, message, args) => {
   if(!message.mentions.users.first()) return message.reply("Não encontrei ninguém.");
   if(message.mentions.users.first() === message.author) return message.channel.send("Não é possível roubar a sí.");
 
+  // Tentativa;
+  let verificar = ["feito", "nao", "nao"];
+  let pegar = verificar[Math.floor(Math.random() * verificar.length)];
+  if(pegar === "nao") return message.channel.send("Tu falhaste. Estás sendo preso.");
+  
   let timeout = 180000;
   let calculo = Math.random() * maxLimit;
   let reward = Math.floor(calculo);
